@@ -4,6 +4,7 @@ botoes.forEach(btn=> btn.addEventListener('click', filtrarLivros))
 
 function filtrarLivros(){
     const elementoBtn = document.getElementById(this.id)
-    let livrosFiltrados = livros.filter(livros => livros.categoria == elementoBtn.value)
+    const categoria = elementoBtn.value
+    let livrosFiltrados = categoria =='disponivel' ? livros.filter(livros => livros.quantidade > 0): livros.filter(livros => livros.categoria == elementoBtn.value)
     exibirLivros(livrosFiltrados)
 }
