@@ -1,7 +1,9 @@
 const elementoLivro = document.getElementById('livros')
+const elementoTotalValor = document.getElementById('valor_total_livros_disponiveis')
 
 function exibirLivros(listaLivros){
     elementoLivro.innerHTML='' 
+    elementoTotalValor.innerHTML=''
     listaLivros.forEach(livro => {
         // let disponibilidade = verificarEstoque(livro)
         let disponibilidade = livro.quantidade > 0 ? 'livro__imagens':'livro__imagens indisponivel'
